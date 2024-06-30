@@ -88,5 +88,5 @@ def delete_order(id):
     return redirect(url_for('orders'))
 
 if __name__ == '__main__':
-    init_db()
     app.run(debug=True)
+

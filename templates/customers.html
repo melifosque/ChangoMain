@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administrar Clientes</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="header">
+        <span id="open-btn">&#9776;</span>
+        <span>Parcial Oemig</span>
+    </div>
+    <div id="sidemenu" class="sidemenu">
+        <a href="javascript:void(0)" id="close-btn">&times;</a>
+        <a href="{{ url_for('home') }}"><i class='bx bx-home'></i>Inicio</a>
+        <a href="{{ url_for('orders') }}"><i class='bx bx-search'></i>Ordenes</a>
+        <a href="{{ url_for('customers') }}"><i class='bx bx-user'></i>Clientes</a>
+        <ul class="submenu oculto" id="adminMenu">
+            <li><a href="{{ url_for('orders') }}">Administrar Órdenes</a></li>
+            <li><a href="{{ url_for('customers') }}">Administrar Clientes</a></li>
+        </ul>
+    </div>
+    <div class="main">
+        <h1>Clientes</h1>
+        <a href="{{ url_for('add_customer') }}">Agregar Cliente</a>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Estado</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for customer in customers %}
+                <tr>
+                    <td>{{ customer.id }}</td>
+                    <td>{{ customer.name }}</td>
+                    <td>{{ customer.status }}</td>
+                    <td>
+                        <a href="{{ url_for('edit_customer', id=customer.id) }}">Editar</a>
+                        <a href="{{ url_for('delete_customer', id=customer.id) }}" onclick="return confirm('¿Está seguro?');">Eliminar</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}" defer></script>
+</body>
+</html>

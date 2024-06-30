@@ -1,0 +1,183 @@
+/* General styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+}
+
+/* Header styles */
+.header {
+  background-color: #333;
+  color: white;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header span {
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* Sidemenu styles */
+.sidemenu {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidemenu a {
+  padding: 10px 15px;
+  text-decoration: none;
+  font-size: 18px;
+  color: white;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidemenu a:hover {
+  background-color: #575757;
+}
+
+.sidemenu .submenu {
+  padding-left: 20px;
+}
+
+.sidemenu .submenu a {
+  font-size: 16px;
+}
+
+.sidemenu .oculto {
+  display: none;
+}
+
+#close-btn {
+  position: absolute;
+  top: 10px;
+  right: 25px;
+  font-size: 36px;
+  color: white;
+  cursor: pointer;
+}
+
+/* Main content styles */
+.main {
+  margin-left: 0; /* Ajuste temporal, adaptar según la necesidad */
+  padding: 20px;
+}
+
+.productos,
+.clientes {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+form {
+  margin: 20px 0;
+}
+
+table {
+  width: 90%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+table th,
+table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+table th {
+  background-color: #f2f2f2;
+}
+
+table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+ul li {
+  margin-bottom: 10px;
+}
+
+h1,
+h2 {
+  margin-top: 30px;
+}
+
+form input {
+  margin: 10px 0;
+  padding: 10px;
+  width: calc(100% - 22px);
+  box-sizing: border-box;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+}
+
+form button {
+  padding: 10px 20px;
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+form button:hover {
+  background-color: #575757;
+}
+.main {
+  margin-left: 250px; /* Ajusta según sea necesario */
+  padding: 20px;
+}
+
+.form-actions {
+  margin-top: 20px; /* Espacio entre los campos y el botón */
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+form label {
+  margin-bottom: 8px;
+}
+
+form input,
+form select {
+  width: 50%;
+  padding: 10px;
+  margin-bottom: 15px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+form button {
+  padding: 10px 20px;
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+form button:hover {
+  background-color: #575757;
+}

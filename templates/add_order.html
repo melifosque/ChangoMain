@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agregar Orden</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="header">
+        <span id="open-btn">&#9776;</span>
+        <span>Parcial Oemig</span>
+    </div>
+    <div id="sidemenu" class="sidemenu">
+        <a href="javascript:void(0)" id="close-btn">&times;</a>
+        <a href="{{ url_for('home') }}"><i class='bx bx-home'></i>Inicio</a>
+        <a href="{{ url_for('orders') }}"><i class='bx bx-search'></i>Ordenes</a>
+        <a href="{{ url_for('customers') }}"><i class='bx bx-user'></i>Clientes</a>
+        <ul class="submenu oculto" id="adminMenu">
+            <li><a href="{{ url_for('orders') }}">Administrar Órdenes</a></li>
+            <li><a href="{{ url_for('customers') }}">Administrar Clientes</a></li>
+        </ul>
+    </div>
+    <div class="main">
+        <h1>Agregar Orden</h1>
+        <form method="post">
+            <label for="customer_id">Cliente:</label>
+            <select id="customer_id" name="customer_id" required>
+                {% for customer in customers %}
+                <option value="{{ customer.id }}">{{ customer.name }}</option>
+                {% endfor %}
+            </select>
+            <label for="product">Producto:</label>
+            <input type="text" id="product" name="product" required>
+            <label for="order_date">Fecha de Orden:</label>
+            <input type="date" id="order_date" name="order_date" required>
+            <button type="submit">Agregar Orden</button>
+        </form>
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}" defer></script>
+</body>
+</html>
